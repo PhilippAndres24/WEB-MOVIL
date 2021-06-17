@@ -26,6 +26,12 @@ body {
     text-shadow: 4px 4px 4px #aaa;
 }
 
+.bajadacontacto {
+    font-family: 'Crimso Pro', serif;
+    font-size: 150px;
+    text-shadow: 4px 4px 4px #aaa;
+}
+
 .card-text {
     font-family: 'Open Sans', serif;
     font-size: 15px;

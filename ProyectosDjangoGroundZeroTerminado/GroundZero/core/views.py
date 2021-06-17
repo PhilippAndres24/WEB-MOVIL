@@ -9,7 +9,9 @@ def index(request):
     
 def qnsomos(request):
     return render(request,'core/qnsomos.html')
-
+    
+def contacto(request):
+    return render(request,'core/contacto.html')
 
 
 def tienda(request):

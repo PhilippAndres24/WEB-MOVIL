@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import form_mod_obra,form_del_obra
-from .views import home, index,qnsomos,tienda,login,registro,pintura1,pintura2,pintura3,pintura4,pintura5,pintura6,form_agregar
+from .views import home, index,qnsomos,tienda,login,registro,pintura1,pintura2,pintura3,pintura4,pintura5,pintura6,form_agregar,contacto
 
 urlpatterns = [
     path('',index,name="index"),
@@ -11,6 +11,7 @@ urlpatterns = [
     
     path('login',login,name="login"),
     path('registro',registro,name="registro"),
+    path('contacto',contacto,name="contacto"),
 
     path('pintura1',pintura1,name="pintura1"),
     path('pintura2',pintura2,name="pintura2"),

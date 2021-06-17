@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-<title> OBRA TIENDA</title>
+<title>Inicio Sesion</title>
 
 <head>
     <!-- Required meta tags -->
@@ -10,8 +10,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="{% static 'core/css/estilo.css'%}">
+    <link rel="stylesheet" href="{% static 'core/css/estilo2.css'%}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link rel="shortcut icon" href="imagenes/favicon">
+    <link rel="shortcut icon" href="{% static 'core/'imagenes/favicon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 
@@ -38,46 +39,81 @@
             </ul>
 
             <button class=" ham " type="button ">   
-                    <span class="br-1 "></span>
-                    <span class="br-2 "></span>
-                    <span class="br-3 "></span>
-                </button>
+                <span class="br-1 "></span>
+                <span class="br-2 "></span>
+                <span class="br-3 "></span>
+            </button>
 
         </nav>
     </header>
 
-    <script src="{% static 'core/js2/main.js'%} "></script>
-
-
+    <script src="{% static 'core/js2/formscontacto.js'%} "></script>
 
 </head>
 
 <body>
+    <form class="formulario" id="formulario" action="{% url 'index' %}">
+        <div class="bajadacontacto">
+            <h1>SOLICITUD PARA PUBLICAR OBRA</h1>
+        </div>
+        <div class="contenedor">
 
-    <div class="container">
-        <div class="card-deck ">
-            <div class="card ">
-
-
-                <img class="card-img-top " src="{% static 'core/imagenes/OBRA5TIENDA.jpg' %}" alt="Card image cap " width="150px " height="600px ">
-
-                <div class="card-body ">
-                    <h5 class="card-title ">Libre, serie IV</h5>
-                    <p class="card-text ">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, nobis eligendi asperiores sed delectus accusamus accusantium, nam perspiciatis quidem iste minus ipsum omnis praesentium, nesciunt quam ipsa odio voluptatibus nulla!</p>
-                    <p>Autor: Luis Moscoso</p>
-                    <p>Tencnica Usada: Palm Painting</p>
-                    <p>Precio: $180.000 CLP</p>
-
-                </div>
-                <div class="card-footer ">
-                    <small class="text-muted ">Last updated 7 mins ago</small>
-
-                </div>
+            <div class="input-contenedor">
+                <i class="fas fa-envelope icon"></i>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre">
 
             </div>
 
+            <div class="input-contenedor">
+                <i class="fas fa-key icon"></i>
+                <input type="text" id="autor" name="autor" minlength="6" placeholder="Autor">
+
+            </div>
+            <div class="input-contenedor">
+                <i class="fas fa-key icon"></i>
+                <input type="text" id="tecnica" name="tecnica" minlength="6" placeholder="Tecnica">
+
+            </div>
+
+            <div class="input-contenedor">
+                <i class="fas fa-key icon"></i>
+                <input type="text" id="precio" name="precio" minlength="6" placeholder="Precio">
+
+            </div>
+
+            <div class="input-contenedor">
+                <i class="fas fa-key icon"></i>
+                <input type="text" id="dimension" name="dimension" minlength="6" placeholder="Dimension">
+
+            </div>
+
+            <div class="input-contenedor">
+                <i class="fas fa-envelope icon"></i>
+                <input type="email" id="email" name="email" placeholder="Correo Electronico">
+
+            </div>
+
+
+            <input type="submit" value="Enviar Solicitud" class="button">
+
         </div>
-    </div>
+
+        <p>Una vez enviada su solicitud, administracion enviara un correo electronico de usted con la confirmacion de subida de obra.</p>
+
+
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
     <div class="footer-dark">
         <footer>
             <div class="container">
@@ -112,6 +148,8 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+
+
 </body>
 
 </html>
