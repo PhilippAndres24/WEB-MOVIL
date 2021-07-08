@@ -42,6 +42,18 @@ def pintura5(request):
 def pintura6(request):
     return render(request,'core/pintura6.html')
 
+def create(request):
+    return render(request,'core/create.html')
+def detalle_obras(request):
+    return render(request,'core/detalle_obras.html')
+def edit(request):
+    return render(request,'core/edit.html')
+def get(request):
+    return render(request,'core/get.html')
+
+def homeapi(request):
+    return render(request,'core/homeapi.html')        
+
 def home(request):
 
     obras = Obras.objects.all()

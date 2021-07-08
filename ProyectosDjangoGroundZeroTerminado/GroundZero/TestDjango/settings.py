@@ -39,7 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'core',
+    'rest_obra',
+    'rest_framework.authtoken',
+    
 ]
 
 MIDDLEWARE = [
@@ -80,7 +84,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.oracle',
         'NAME': '127.0.0.1/xe',
-        'USER':'c##groundzero',
+        'USER':'groundzero',
         'PASSWORD':'123',
         'TEST': {
             'USER': 'default_test',
