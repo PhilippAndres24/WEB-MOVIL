@@ -1,0 +1,34 @@
+<div class="bajada">
+    <ion-header>
+
+        <ion-list>
+            <ion-item>
+                <ion-title>
+                    Bienvenido Pepito!
+                </ion-title>
+
+            </ion-item>
+        </ion-list>
+
+
+    </ion-header>
+</div>
+
+<ion-content>
+    <img src="https://www.vanguardia.com/binrepository/717x478/0c0/716d477/none/12204/NOQD/beat_6126920_20210913155742.jpg" alt=".">
+    <img src="https://www.sobreruedas.news/wp-content/uploads/2020/02/Pass-Beat-BWB.png">
+
+
+    <ion-button (click)="cerrrasesion()" expand="full" color="warning" [routerLink]="['/home/']">CERRAR SESION</ion-button>
+
+    <ion-footer>
+
+        <ion-row>
+            <ion-col size="3">
+                <ion-button color="warning" [routerLink]="['/modclave/']">CAMBIAR CLAVE</ion-button>
+            </ion-col>
+            <ion-col size="3" offset="3">
+                <ion-button color="warning" [routerLink]="['/tomaviaje/']">TOMAR VIAJE</ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-footer>
