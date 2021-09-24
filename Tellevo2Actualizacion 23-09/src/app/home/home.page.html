@@ -1,0 +1,60 @@
+<div class="container">
+    <ion-header>
+        <ion-toolbar>
+            <div class="bajada">
+                <ion-title>
+                    TeLlevoAPP
+                </ion-title>
+            </div>
+        </ion-toolbar>
+        <img src="https://i1.wp.com/wp.capplatam.com/wp-content/uploads/2020/01/oiopop.jpg?resize=350%2C200&ssl=1" alt="." width="150" hight="200">
+    </ion-header>
+</div>
+
+
+<ion-content>
+
+    <ion-card>
+
+        <ion-list>
+
+            <ion-item>
+                <ion-label for="name">Usuario</ion-label>
+                <ion-input type="text" FormControl="name" id="name"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label for="name">Contraseña</ion-label>
+                <ion-input type="password" FormControl="name" id="name"></ion-input>
+            </ion-item>
+
+        </ion-list>
+
+
+        <ion-button (click)="toast()" expand="full" color="warning" [routerLink]="['/login/']">INGRESAR</ion-button>
+
+    </ion-card>
+
+    <div class="container">
+        <ion-card>
+            <ion-list>
+
+                <ion-label>No recuerdas tu contraseña? Haz click aquí. </ion-label>
+                <ion-button expand="full" color="warning" [routerLink]="['/modclave/']">Recuperar</ion-button>
+
+            </ion-list>
+        </ion-card>
+
+    </div>
+</ion-content>
+<ion-card>
+    <ion-label>No tienes cuenta? Eres nuevo? Que esperas!, dale click abajo para registrarte como pasajero.</ion-label>
+</ion-card>
+<!-- Footer without a border -->
+<ion-footer class="ion-no-border">
+    <div class="container">
+        <ion-toolbar>
+            <ion-button padding color="warning" expand="full" [routerLink]="['/registro']">CONVIERTETE EN PASAJERO</ion-button>
+        </ion-toolbar>
+    </div>
+</ion-footer>
