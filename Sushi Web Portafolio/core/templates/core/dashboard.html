@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head class="header">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">{% load static %}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Administracion Pedidos</title>
+  <link rel="stylesheet" href="{% static 'core/css/estilo.css' %}">
+  <link rel="stylesheet" href="{% static 'core/css/dashboard.css' %}">
+  <link rel="stylesheet" href="{% static 'core/css/testimonio.css' %}">
+
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Updock&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Updock&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@389&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@389&display=swap');
+  </style>
+</head>
+
+<body>
+
+  <div class="header-inner">
+    <div class="container-fluid px-lg-5">
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/../../dashboard/{{user}}">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUGQ0Nsje29ctjhGi1pLHs_1AfO-RefQcGtA&usqp=CAU"
+              class="img-fluid" style="width: 50px; margin: 3px 0px 0px 0px;">
+          </a><a>
+            <h3 class="menubartitle">SushiDelicious</h3>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"><i class="fas fa-bars" style="margin: 3px 0px 0px 0px;"></i></span>
+          </button>
+          <div class="collapse navbar-collapse prob" id="navbarSupportedContent">
+            <ul class="navbar-nav m-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../../usuarios/{{user}}">
+                  <h5 class="menubar">Usuarios</h5>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../../dashboard/{{user}}">
+                  <h5 class="menubar">Historial de Compras</h5>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/../../inventario/{{user}}">
+                  <h5 class="menubar">Bodega</h5>
+                </a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/../../estadistica/{{user}}">
+                  <h5 class="menubar">Estadisticas</h5>
+                </a>
+              </li> -->
+
+            </ul>
+
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <BR>
+
+  <section>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <h1 class="titulopanel">
+      <ion-icon name="construct-outline"></ion-icon>Historial de Compras
+
+    </h1>
+
+
+
+    <table class="table container">
+      <thead class="tarjetatabla">
+
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Id Pedido</th>
+          <th scope="col">Nombre Cliente</th>
+          <th scope="col">Combos</th>
+          <th scope="col">Direccion</th>
+          <th scope="col">Telefono</th>
+          <th scope="col">TOTAL $</th>
+          <th scope="col">Fecha</th>
+          <th scope="col">Opciones</th>
+          <th scope="col"></th>
+          
+
+
+        </tr>
+      </thead>
+      <tbody class="tarjetatabla">
+
+        {% for x in producto %}
+        <tr id="input-group">
+          <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <td></td>
+            <td><input class="inpt"  type="text" id="idpedido" name="idpedido" value="{{x.0}}"></td>
+            <td><input class="inpt"type="text" id="username" name="nombreusuario" value="{{x.1}}"readonly></td>
+            <td><input class="inpt"type="text" id="combos" name="combos" value="{{x.2}}"readonly></td>
+            <td><input class="inpt"type="text" id="direccion" name="direccion" value="{{x.3}}"readonly></td>
+            <td><input class="inpt"type="text" id="telefono" name="telefono" value="{{x.4}}"readonly></td>
+            <td><input class="inpt"type="text" id="total" name="total" value="{{x.5}}"readonly></td>
+            <td><input class="inpt"type="text" id="fecha" name="fecha" value="{{x.6}}"readonly></td>
+            <td><button class="btnoption btn-danger" type="submit" name="boton" value="Eliminar">Eliminar</button></td>
+          </form>
+          <td><a href="{{user}}/modificarpedido/{{x.0}}" style="text-decoration: none;"><button
+                class="btnoption btn-primary">Editar</button></a></td>
+        </tr>
+        {{msg}}
+        {% endfor %}
+
+
+
+      </tbody>
+    </table>
+    <hr class="separador">
+    <script src="{% static 'core/js/tienda.js' %}"></script>
+    <h1 class="titulopanel">
+      <ion-icon name="construct-outline"></ion-icon>CREAR NUEVO PEDIDO
+
+    </h1>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <table class="table container probando">
+      <thead class="tarjetatabla">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Id Pedido</th>
+          <th scope="col">Nombre Cliente</th>
+          <th scope="col">Combos</th>
+          <th scope="col">Direccion</th>
+          <th scope="col">Telefono</th>
+          <th scope="col">TOTAL $</th>
+          <th scope="col">Fecha</th>
+          <th scope="col">Opciones</th>
+
+
+        </tr>
+      </thead>
+      <tbody class="tarjetatabla">
+        <form action="" method="POST">
+
+          {% csrf_token %}
+
+          <tr id="input-group">
+            <td></td>
+            <td><input class="inpt" type="number" id="idpedido" name="idpedido"required></td>
+
+          
+            <td><select name="nombreusuario" id="">
+              {% for x in usuarios %}
+              <option name="nombreusuario" value="{{x.0}}">{{x.0}}</option>
+              {% endfor %}
+            </select></td>
+          
+
+            <td><input class="inpt" type="text" id="password" name="combos"required></td>
+            <td><input class="inpt" type="text" id="direccion" name="direccion"required></td>
+            <td><input class="inpt" type="number" id="telefono" name="telefono" required></td>
+            <td><input class="inpt" type="number" id="total" name="total"required></td>
+            <td><input class="inpt"type="text" id="fecha" name="fecha" readonly></td>
+            <td><button class="btnoption btn-primary" type="submit" value="Crear" name="boton">Crear</button></td>
+
+          </tr>
+        </form>
+      </tbody>
+    </table>
+
+  </section>
+<script>
+    document.getElementById("fecha").value = Date();
+</script>
+<input value="Copyright by Iwasoski" type="hidden">
+</body>
+<script>
+  function Agregar(respuesta, usuario) {
+    if (respuesta == 1) {
+      swal("El pedido ha sido registrado con exito", "", "success", {
+        button: "Listo",
+      }).then(function () {
+        window.location = "../dashboard/" + usuario;
+      });
+    } else if (respuesta == 2) {
+      swal("El pedido no ha sido agregado", "Porfavor verifica los Datos", "error", {
+        button: "Listo",
+      }).then(function () {
+
+      });
+
+    }
+  }
+  window.addEventListener('load', event => {
+    Agregar('{{validador}}', '{{user}}');
+  });
+
+</script>
+<script>
+  function eliminado(respuesta, usuario) {
+    if (respuesta == 3) {
+      swal("El pedido ha sido eliminado con exito", "", "success", {
+        button: "Listo",
+      }).then(function () {
+        window.location = "../dashboard/" + usuario;
+      });
+    } else if (respuesta == 4) {
+      swal("El pedido no ha sido eliminado", "Porfavor verifica los Datos", "error", {
+        button: "Listo",
+      }).then(function () {
+
+      });
+
+    }
+  }
+  window.addEventListener('load', event => {
+    eliminado('{{validador}}', '{{user}}');
+  });
+
+</script>
+<script>
+  function modifico(respuesta) {
+    if (respuesta == 5) {
+      swal("El pedido ha sido modificado con exito", "", "success", {
+        button: "Listo",
+      }).then(function () {
+        window.location = "../dashboard";
+      });
+    } else if (respuesta == 6) {
+      swal("El pedido no ha sido modificado", "Porfavor verifica los Datos", "error", {
+        button: "Listo",
+      }).then(function () {
+
+      });
+
+    }
+  }
+  window.addEventListener('load', event => {
+    modifico('{{validador}}');
+  });
+
+</script>
+<script>
+  function cerrarsesion(){
+    swal("Ha salido del Panel de administracion","Debera ingresar nuevamente para acceder al panel.","success", {
+        button: "Listo",
+      }).then(function () {
+        window.location = "../../login";
+      });
+  }
+</script>
+<footer class="">
+  <div class="footer-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-md-3 item">
+          <h5 class="menubar">Cerrar Sesión</h5>
+          <ul class="" fortext>
+            <li><a style="color:#fff;"  href="#" onclick="cerrarsesion()">Logout</a></li>
+
+
+          </ul>
+        </div>
+        <div class="col-sm-6 col-md-3 item">
+          <h5 class="menubar"></h5>
+          <ul>
+            <p class="card-text"><small class="text-muted"></small></p>
+
+          </ul>
+        </div>
+        <div class="col-md-6 item text">
+
+          <p class="card-text"><small class="text-muted">© SushiDelicious Todos los derechos reservados.</small></p>
+        </div>
+        <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i
+              class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-whatsapp"></i></a></div>
+      </div>
+      <p class="copyright"><small class="text-muted">SushiDelicious © 2022.</small></p>
+    </div>
+
+
+</footer>
+
+</html>
+<script>
+  document.getElementById("idpedido").innerHTML =
+    Math.floor(Math.random() * 1000) + 3;
+</script>

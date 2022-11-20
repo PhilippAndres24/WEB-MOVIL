@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <ion-icon (click)="salir()"name="exit-outline"></ion-icon>
+      Sesion iniciada
+    </ion-title>
+</ion-toolbar>
+  <div class="background">
+    <ion-title>
+      
+      <h1 #miAnimacion>Hola {{data}} !!</h1>
+      
+    </ion-title>
+  </div>
+</ion-header>
+<ion-toolbar>
+  <!-- Default Segment -->
+    <ion-segment (ionChange)="segmentChanged($event)">
+        <ion-segment-button value="cp1"><p>Perfil</p>
+          <ion-icon name="person-circle-outline"></ion-icon>
+        </ion-segment-button>
+        <ion-segment-button value="cp2"><p>Scan QR</p>
+          <ion-icon name="scan-circle-outline"></ion-icon>
+        </ion-segment-button>
+        <ion-segment-button value="cp3"><p>Solicitud</p>
+          <ion-icon name="mail-open-outline"></ion-icon>
+        </ion-segment-button>
+        <ion-segment-button value="cp4"><p>Correos</p>
+          <ion-icon name="card-outline"></ion-icon>
+        </ion-segment-button>
+    </ion-segment>
+</ion-toolbar>
+
+
+  
+<ion-content>
+  <div class="background">
+  
+  <ion-router-outlet></ion-router-outlet>
+  </div>
+</ion-content>
+
+

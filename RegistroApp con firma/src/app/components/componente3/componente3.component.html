@@ -1,0 +1,23 @@
+<ion-content>
+  <ion-card>
+    <ion-item>
+      <ion-label position="floating">Ingrese su nombre completo</ion-label>
+      <ion-input type="text"[(ngModel)]="nombre"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Ingrese nombre carrera</ion-label>
+      <ion-input type="text" [(ngModel)]="carrera"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Comentarios(Máximo 500 caracteres)</ion-label>
+      <ion-textarea type="text"[(ngModel)]="correo"></ion-textarea>
+    </ion-item>
+
+    <ion-button shape="block" (click)="enviar()">Enviar Solicitud</ion-button>
+  </ion-card>
+  
+  
+  
+</ion-content>

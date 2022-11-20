@@ -1,0 +1,30 @@
+
+<ion-content> 
+  <ion-card>
+      
+        <ion-label position="stacked" class="ion-padding-bottom"><h1>Lista Alumnos</h1></ion-label>
+        
+      
+      <ion-item *ngFor="let usu of alumnos">                                                
+        <ion-label>
+          <h3>{{usu.userId}}@duocuc.cl</h3>
+        </ion-label>
+        <ion-label>
+          <h3>Nombre: " {{usu.nombreAlumno}} "</h3>
+        </ion-label>
+      </ion-item>
+      
+      
+      <ion-item *ngFor="let f of carreras">                                                
+          <ion-label (click)="seleccionar(f)">
+            <h4>{{f.nomcarrera}}</h4><p>ID: " {{f.alumId}} "</p>
+          </ion-label>
+        
+        <ion-button (click)="eliminar(f)">
+          <ion-icon name="trash-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+    
+    
+  </ion-card>
+</ion-content>

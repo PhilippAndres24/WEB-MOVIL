@@ -1,0 +1,34 @@
+{
+    "alumnos": [
+    {
+      "alumId": 1,
+      "nombreAlumno": "Juan Perez",
+      "userId": "ju.perez",
+      "clave": "9999"
+    },
+    {
+      "alumId": 2,
+      "nombreAlumno": "Juliana Sosa",
+      "userId": "ju.sosa",
+      "clave": "4321"
+    }
+    ],
+    "carrera":[
+
+        {
+            "id":1,
+            "alumId": 1,
+            "nomcarrera":"analista"
+        },
+        {
+            "id":2,
+            "alumId": 2,
+            "nomcarrera":"musica"
+        }
+
+
+
+
+    ]
+
+}

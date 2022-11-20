@@ -1,0 +1,12 @@
+
+<ion-card>
+  <ion-card-content>
+    <ion-button expand= "block" color="success" (click)="LeerCodigo()"><h4>Capturar Codigo QR</h4></ion-button>
+
+    <div *ngIf="datosScaneado">
+      <ion-label>Contenido Obtenido: {{datosScaneado["text"]}}</ion-label>
+    </div>
+  </ion-card-content>
+  
+  
+</ion-card>

@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slots="start">
+        <ion-back-button text="" icon="log-out-outline"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-item>
+        <ion-label position="floating"> Ingresa usuario</ion-label>
+        <ion-input type="text"[(ngModel)]="user.usuario"></ion-input>
+    </ion-item>
+    <ion-button (click)="ingresarr()">Enviar</ion-button>
+    </ion-card-header>
+    
+  </ion-card>
+</ion-content>
